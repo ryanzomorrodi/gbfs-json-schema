@@ -20,8 +20,10 @@ macro_rules! file_struct {
 pub mod free_bike_status;
 pub mod gbfs;
 pub mod gbfs_versions;
+pub mod geofencing_zones;
 pub mod station_information;
 pub mod station_status;
+pub mod system_alerts;
 pub mod system_calendar;
 pub mod system_hours;
 pub mod system_information;
@@ -32,8 +34,10 @@ pub mod vehicle_types;
 pub use self::free_bike_status::{FreeBikeStatusData, FreeBikeStatusFile};
 pub use self::gbfs::{GbfsData, GbfsFile};
 pub use self::gbfs_versions::{GbfsVersionsData, GbfsVersionsFile};
+pub use self::geofencing_zones::{GeofencingZonesData, GeofencingZonesFile};
 pub use self::station_information::{StationInformationData, StationInformationFile};
 pub use self::station_status::{StationStatusData, StationStatusFile};
+pub use self::system_alerts::{SystemAlertsData, SystemAlertsFile};
 pub use self::system_calendar::{SystemCalendarData, SystemCalendarFile};
 pub use self::system_hours::{SystemHoursData, SystemHoursFile};
 pub use self::system_information::{SystemInformationData, SystemInformationFile};
@@ -137,6 +141,13 @@ mod tests {
     }
 
     #[test]
+    fn system_alerts() {
+        let system_alerts = include_str!("./examples/specification/system_alerts.json");
+
+        test_file::<super::system_alerts::SystemAlertsFile>(system_alerts);
+    }
+
+    #[test]
     fn system_pricing_plans() {
         let system_pricing_plans =
             include_str!("./examples/specification/system_pricing_plans-1.json");
@@ -147,5 +158,12 @@ mod tests {
             include_str!("./examples/specification/system_pricing_plans-2.json");
 
         test_file::<super::system_pricing_plans::SystemPricingPlansFile>(system_pricing_plans);
+    }
+
+    #[test]
+    fn geofencing_zones() {
+        let geofencing_zones = include_str!("./examples/specification/geofencing_zones.json");
+
+        test_file::<super::geofencing_zones::GeofencingZonesFile>(geofencing_zones);
     }
 }

@@ -70,9 +70,11 @@ macro_rules! file_url {
 file_url!(GbfsFileUrl, GbfsFile);
 
 file_url!(GbfsVersionsFileUrl, GbfsVersionsFile);
+file_url!(GeofencingZonesFileUrl, GeofencingZonesFile);
 file_url!(FreeBikeStatusFileUrl, FreeBikeStatusFile);
 file_url!(StationInformationFileUrl, StationInformationFile);
 file_url!(StationStatusFileUrl, StationStatusFile);
+file_url!(SystemAlertsFileUrl, SystemAlertsFile);
 file_url!(SystemCalendarFileUrl, SystemCalendarFile);
 file_url!(SystemHoursFileUrl, SystemHoursFile);
 file_url!(SystemInformationFileUrl, SystemInformationFile);

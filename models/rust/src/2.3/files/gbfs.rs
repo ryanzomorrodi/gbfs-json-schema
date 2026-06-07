@@ -124,11 +124,27 @@ add_file_type!(
 );
 
 add_file_type!(
+    get_geofencing_zones_url,
+    GeofencingZonesFileUrl,
+    get_geofencing_zones,
+    GeofencingZonesFile,
+    "geofencing_zones"
+);
+
+add_file_type!(
     get_station_information_url,
     StationInformationFileUrl,
     get_station_information,
     StationInformationFile,
     "station_information"
+);
+
+add_file_type!(
+    get_system_alerts_url,
+    SystemAlertsFileUrl,
+    get_system_alerts,
+    SystemAlertsFile,
+    "system_alerts"
 );
 
 add_file_type!(

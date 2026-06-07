@@ -1,11 +1,3 @@
-use serde::{Deserialize, Serialize};
-
-#[cfg(feature = "pyo3")]
-use pyo3::prelude::*;
-
-#[cfg(feature = "napi")]
-use napi_derive::napi;
-
 #[cfg(doc)]
 use crate::v2_3::files::free_bike_status::FreeBikeStatusFile;
 #[cfg(doc)]
@@ -13,9 +5,13 @@ use crate::v2_3::files::gbfs::GbfsFile;
 #[cfg(doc)]
 use crate::v2_3::files::gbfs_versions::GbfsVersionsFile;
 #[cfg(doc)]
+use crate::v2_3::files::geofencing_zones::GeofencingZonesFile;
+#[cfg(doc)]
 use crate::v2_3::files::station_information::StationInformationFile;
 #[cfg(doc)]
 use crate::v2_3::files::station_status::StationStatusFile;
+#[cfg(doc)]
+use crate::v2_3::files::system_alerts::SystemAlertsFile;
 #[cfg(doc)]
 use crate::v2_3::files::system_calendar::SystemCalendarFile;
 #[cfg(doc)]
@@ -33,6 +29,8 @@ use crate::v2_3::files::vehicle_types::VehicleTypesFile;
 use crate::v2_3::files::free_bike_status::Bike;
 #[cfg(doc)]
 use crate::v2_3::files::station_information::Station;
+#[cfg(doc)]
+use crate::v2_3::files::system_alerts::AlertTime;
 #[cfg(doc)]
 use crate::v2_3::files::system_calendar::Calendar;
 #[cfg(doc)]

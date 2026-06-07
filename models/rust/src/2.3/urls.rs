@@ -68,3 +68,4 @@ macro_rules! file_url {
 }
 
 file_url!(FreeBikeStatusFileUrl, FreeBikeStatusFile);
+file_url!(StationStatusFileUrl, StationStatusFile);

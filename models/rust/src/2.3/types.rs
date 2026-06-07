@@ -6,9 +6,27 @@ use pyo3::prelude::*;
 #[cfg(feature = "napi")]
 use napi_derive::napi;
 
-// Files Structs here
+#[cfg(doc)]
+use crate::v2_3::files::free_bike_status::FreeBikeStatusFile;
+#[cfg(doc)]
+use crate::v2_3::files::gbfs::GbfsFile;
+#[cfg(doc)]
+use crate::v2_3::files::station_information::StationInformationFile;
+#[cfg(doc)]
+use crate::v2_3::files::station_status::StationStatusFile;
+#[cfg(doc)]
+use crate::v2_3::files::system_pricing_plans::SystemPricingPlansFile;
+#[cfg(doc)]
+use crate::v2_3::files::vehicle_types::VehicleTypesFile;
 
-// Data Structs here
+#[cfg(doc)]
+use crate::v2_3::files::free_bike_status::Bike;
+#[cfg(doc)]
+use crate::v2_3::files::station_information::Station;
+#[cfg(doc)]
+use crate::v2_3::files::system_pricing_plans::SystemPricingPlan;
+#[cfg(doc)]
+use crate::v2_3::files::vehicle_types::VehicleType;
 
 /// Should be represented as a string that identifies that particular entity. An ID:
 /// - MUST be unique within like fields (for example, `station_id` MUST be unique among stations).

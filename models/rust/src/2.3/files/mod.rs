@@ -18,12 +18,14 @@ macro_rules! file_struct {
 }
 
 pub mod free_bike_status;
+pub mod gbfs;
 pub mod station_information;
 pub mod station_status;
 pub mod system_pricing_plans;
 pub mod vehicle_types;
 
 pub use self::free_bike_status::{FreeBikeStatusData, FreeBikeStatusFile};
+pub use self::gbfs::{GbfsData, GbfsFile};
 pub use self::station_information::{StationInformationData, StationInformationFile};
 pub use self::station_status::{StationStatusData, StationStatusFile};
 pub use self::system_pricing_plans::{SystemPricingPlansData, SystemPricingPlansFile};
@@ -42,6 +44,13 @@ mod tests {
             serde_json::from_str(&serde_json::to_string(&file).unwrap()).unwrap();
 
         assert_eq!(json_value, json_value2);
+    }
+
+    #[test]
+    fn gbfs() {
+        let gbfs = include_str!("./examples/specification/gbfs.json");
+
+        test_file::<super::gbfs::GbfsFile>(gbfs);
     }
 
     #[test]

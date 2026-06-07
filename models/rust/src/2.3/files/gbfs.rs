@@ -172,6 +172,14 @@ add_file_type!(
 );
 
 add_file_type!(
+    get_system_regions_url,
+    SystemRegionsFileUrl,
+    get_system_regions,
+    SystemRegionsFile,
+    "system_regions"
+);
+
+add_file_type!(
     get_free_bike_status_url,
     FreeBikeStatusFileUrl,
     get_free_bike_status,
@@ -186,4 +194,3 @@ add_file_type!(
     VehicleTypesFile,
     "vehicle_types"
 );
-

@@ -26,6 +26,7 @@ pub mod system_calendar;
 pub mod system_hours;
 pub mod system_information;
 pub mod system_pricing_plans;
+pub mod system_regions;
 pub mod vehicle_types;
 
 pub use self::free_bike_status::{FreeBikeStatusData, FreeBikeStatusFile};
@@ -37,6 +38,7 @@ pub use self::system_calendar::{SystemCalendarData, SystemCalendarFile};
 pub use self::system_hours::{SystemHoursData, SystemHoursFile};
 pub use self::system_information::{SystemInformationData, SystemInformationFile};
 pub use self::system_pricing_plans::{SystemPricingPlansData, SystemPricingPlansFile};
+pub use self::system_regions::{SystemRegionsData, SystemRegionsFile};
 pub use self::vehicle_types::{VehicleTypesData, VehicleTypesFile};
 
 #[cfg(test)]
@@ -125,6 +127,13 @@ mod tests {
         let system_calendar = include_str!("./examples/specification/system_calendar.json");
 
         test_file::<super::system_calendar::SystemCalendarFile>(system_calendar);
+    }
+
+    #[test]
+    fn system_regions() {
+        let system_regions = include_str!("./examples/specification/system_regions.json");
+
+        test_file::<super::system_regions::SystemRegionsFile>(system_regions);
     }
 
     #[test]

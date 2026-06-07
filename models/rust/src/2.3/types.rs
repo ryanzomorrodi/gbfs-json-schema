@@ -25,6 +25,8 @@ use crate::v2_3::files::system_information::SystemInformationFile;
 #[cfg(doc)]
 use crate::v2_3::files::system_pricing_plans::SystemPricingPlansFile;
 #[cfg(doc)]
+use crate::v2_3::files::system_regions::SystemRegionsFile;
+#[cfg(doc)]
 use crate::v2_3::files::vehicle_types::VehicleTypesFile;
 
 #[cfg(doc)]
@@ -39,6 +41,8 @@ use crate::v2_3::files::system_hours::RentalHours;
 use crate::v2_3::files::system_information::SystemInformationData;
 #[cfg(doc)]
 use crate::v2_3::files::system_pricing_plans::SystemPricingPlan;
+#[cfg(doc)]
+use crate::v2_3::files::system_regions::Region;
 #[cfg(doc)]
 use crate::v2_3::files::vehicle_types::VehicleType;
 

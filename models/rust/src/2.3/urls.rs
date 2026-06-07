@@ -77,4 +77,5 @@ file_url!(SystemCalendarFileUrl, SystemCalendarFile);
 file_url!(SystemHoursFileUrl, SystemHoursFile);
 file_url!(SystemInformationFileUrl, SystemInformationFile);
 file_url!(SystemPricingPlansFileUrl, SystemPricingPlansFile);
+file_url!(SystemRegionsFileUrl, SystemRegionsFile);
 file_url!(VehicleTypesFileUrl, VehicleTypesFile);

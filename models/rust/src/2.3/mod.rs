@@ -15,7 +15,7 @@ use serde::{Deserialize, Serialize};
 #[serde_with::skip_serializing_none]
 #[derive(Serialize, Deserialize, Debug, Clone)]
 pub struct GbfsObjects {
-    // vehicle_status
+    pub free_bike_status: Option<files::free_bike_status::FreeBikeStatusData>,
     // station_status
     // station_information
     // vehicle_types

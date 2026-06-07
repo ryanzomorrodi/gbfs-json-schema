@@ -67,4 +67,4 @@ macro_rules! file_url {
     };
 }
 
-// File URL macros here
+file_url!(FreeBikeStatusFileUrl, FreeBikeStatusFile);

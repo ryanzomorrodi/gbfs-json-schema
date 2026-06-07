@@ -17,9 +17,9 @@ macro_rules! file_struct {
     };
 }
 
-// module declarations
+pub mod free_bike_status;
 
-// imports
+pub use self::free_bike_status::{FreeBikeStatusData, FreeBikeStatusFile};
 
 #[cfg(test)]
 mod tests {
@@ -36,5 +36,14 @@ mod tests {
         assert_eq!(json_value, json_value2);
     }
 
-    // example file tests
+    #[test]
+    fn free_bike_status() {
+        let free_bike_status = include_str!("./examples/specification/free_bike_status-1.json");
+
+        test_file::<super::free_bike_status::FreeBikeStatusFile>(free_bike_status);
+
+        let free_bike_status = include_str!("./examples/specification/free_bike_status-2.json");
+
+        test_file::<super::free_bike_status::FreeBikeStatusFile>(free_bike_status);
+    }
 }

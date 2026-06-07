@@ -18,9 +18,11 @@ macro_rules! file_struct {
 }
 
 pub mod free_bike_status;
+pub mod station_information;
 pub mod station_status;
 
 pub use self::free_bike_status::{FreeBikeStatusData, FreeBikeStatusFile};
+pub use self::station_information::{StationInformationData, StationInformationFile};
 pub use self::station_status::{StationStatusData, StationStatusFile};
 
 #[cfg(test)]
@@ -36,6 +38,19 @@ mod tests {
             serde_json::from_str(&serde_json::to_string(&file).unwrap()).unwrap();
 
         assert_eq!(json_value, json_value2);
+    }
+
+    #[test]
+    fn station_information() {
+        let station_information =
+            include_str!("./examples/specification/station_information-1.json");
+
+        test_file::<super::station_information::StationInformationFile>(station_information);
+
+        let station_information =
+            include_str!("./examples/specification/station_information-2.json");
+
+        test_file::<super::station_information::StationInformationFile>(station_information);
     }
 
     #[test]

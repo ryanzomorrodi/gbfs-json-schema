@@ -54,8 +54,8 @@ pub type Longitude = f64;
 // A Geometry Object as described by the IETF RFC <https://tools.ietf.org/html/rfc7946#section-3.1.7>.
 //pub type MultiPolygon = geo_types::geometry::MultiPolygon;
 
-/// Timestamp fields MUST be represented as strings in RFC3339 format, for example 2023-07-17T13:34:13+02:00.
-pub type Timestamp = String;
+/// Timestamp fields MUST be represented as integers in POSIX time (representing the number of seconds since January 1st 1970 00:00:00 UTC).
+pub type Timestamp = i64;
 
 /// TZ timezone from the <https://www.iana.org/time-zones>. Timezone names never contain the space character but MAY contain an underscore. Refer to <https://en.wikipedia.org/wiki/List_of_tz_zones> for a list of valid values. Example: `Asia/Tokyo`, `America/Los_Angeles` or `Africa/Cairo`.
 pub type Timezone = String;
@@ -82,8 +82,8 @@ pub type Currency = String;
 /// View [VehicleType] for more information.
 pub type VehicleTypeID = ID;
 /// Unique identifier of a vehicle.
-/// View [Vehicle] for more information.
-pub type VehicleID = ID;
+/// View [Bike] for more information.
+pub type BikeID = ID;
 /// Unique identifier of a station.
 /// View [Station] for more information.
 pub type StationID = ID;
@@ -108,36 +108,14 @@ pub type AlertID = ID;
 /// - `vehicle_types` for [VehicleTypesFile],
 /// - `station_information` for [StationInformationFile],
 /// - `station_status` for [StationStatusFile],
-/// - `vehicle_status` for [VehicleStatusFile],
+/// - `free_bike_status` for [FreeBikeStatusFile],
+/// - `system_hours` for [SystemHoursFile],
+/// - `system_calendar` for [SystemCalendarFile],
 /// - `system_regions` for [SystemRegionsFile],
 /// - `system_pricing_plans` for [SystemPricingPlansFile],
 /// - `system_alerts` for [SystemAlertsFile],
 /// - `geofencing_zones` for [GeofencingZonesFile]
 pub type FeedType = String;
-
-/// Opening hours in the [OSM opening_hours](https://wiki.openstreetmap.org/wiki/Key:opening_hours).
-pub type OSMOpeningHours = String;
-
-#[cfg_attr(feature = "napi", napi(object))]
-#[cfg_attr(feature = "pyo3", pyclass(get_all, set_all))]
-#[serde_with::skip_serializing_none]
-#[derive(Serialize, Deserialize, Debug, Clone)]
-pub struct LocalizedString {
-    /// The translated text.
-    pub text: String,
-    /// The language code.
-    pub language: Language,
-}
-
-#[cfg_attr(feature = "napi", napi(object))]
-#[cfg_attr(feature = "pyo3", pyclass(get_all, set_all))]
-#[serde_with::skip_serializing_none]
-#[derive(Serialize, Deserialize, Debug, Clone)]
-pub struct LocalizedUrl {
-    pub text: URL,
-    /// The language code.
-    pub language: Language,
-}
 
 pub mod geo_json {
     use serde::{Deserialize, Serialize};

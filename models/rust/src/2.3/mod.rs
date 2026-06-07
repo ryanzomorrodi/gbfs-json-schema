@@ -18,6 +18,6 @@ pub struct GbfsObjects {
     pub free_bike_status: Option<files::free_bike_status::FreeBikeStatusData>,
     pub station_status: Option<files::station_status::StationStatusData>,
     pub station_information: Option<files::station_information::StationInformationData>,
-    // vehicle_types
+    pub vehicle_types: Option<files::vehicle_types::VehicleTypesData>,
     // system_pricing_plans
 }

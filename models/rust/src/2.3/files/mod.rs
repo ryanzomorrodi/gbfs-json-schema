@@ -20,10 +20,12 @@ macro_rules! file_struct {
 pub mod free_bike_status;
 pub mod station_information;
 pub mod station_status;
+pub mod vehicle_types;
 
 pub use self::free_bike_status::{FreeBikeStatusData, FreeBikeStatusFile};
 pub use self::station_information::{StationInformationData, StationInformationFile};
 pub use self::station_status::{StationStatusData, StationStatusFile};
+pub use self::vehicle_types::{VehicleTypesData, VehicleTypesFile};
 
 #[cfg(test)]
 mod tests {
@@ -51,6 +53,13 @@ mod tests {
             include_str!("./examples/specification/station_information-2.json");
 
         test_file::<super::station_information::StationInformationFile>(station_information);
+    }
+
+    #[test]
+    fn vehicle_types() {
+        let vehicle_types = include_str!("./examples/specification/vehicle_types.json");
+
+        test_file::<super::vehicle_types::VehicleTypesFile>(vehicle_types);
     }
 
     #[test]

@@ -19,5 +19,5 @@ pub struct GbfsObjects {
     pub station_status: Option<files::station_status::StationStatusData>,
     pub station_information: Option<files::station_information::StationInformationData>,
     pub vehicle_types: Option<files::vehicle_types::VehicleTypesData>,
-    // system_pricing_plans
+    pub system_pricing_plans: Option<files::system_pricing_plans::SystemPricingPlansData>,
 }

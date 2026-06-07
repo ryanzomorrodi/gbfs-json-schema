@@ -20,11 +20,13 @@ macro_rules! file_struct {
 pub mod free_bike_status;
 pub mod station_information;
 pub mod station_status;
+pub mod system_pricing_plans;
 pub mod vehicle_types;
 
 pub use self::free_bike_status::{FreeBikeStatusData, FreeBikeStatusFile};
 pub use self::station_information::{StationInformationData, StationInformationFile};
 pub use self::station_status::{StationStatusData, StationStatusFile};
+pub use self::system_pricing_plans::{SystemPricingPlansData, SystemPricingPlansFile};
 pub use self::vehicle_types::{VehicleTypesData, VehicleTypesFile};
 
 #[cfg(test)]
@@ -78,5 +80,18 @@ mod tests {
         let free_bike_status = include_str!("./examples/specification/free_bike_status-2.json");
 
         test_file::<super::free_bike_status::FreeBikeStatusFile>(free_bike_status);
+    }
+
+    #[test]
+    fn system_pricing_plans() {
+        let system_pricing_plans =
+            include_str!("./examples/specification/system_pricing_plans-1.json");
+
+        test_file::<super::system_pricing_plans::SystemPricingPlansFile>(system_pricing_plans);
+
+        let system_pricing_plans =
+            include_str!("./examples/specification/system_pricing_plans-2.json");
+
+        test_file::<super::system_pricing_plans::SystemPricingPlansFile>(system_pricing_plans);
     }
 }

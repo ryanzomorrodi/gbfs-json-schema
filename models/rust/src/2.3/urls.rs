@@ -70,4 +70,5 @@ macro_rules! file_url {
 file_url!(FreeBikeStatusFileUrl, FreeBikeStatusFile);
 file_url!(StationInformationFileUrl, StationInformationFile);
 file_url!(StationStatusFileUrl, StationStatusFile);
+file_url!(SystemPricingPlansFileUrl, SystemPricingPlansFile);
 file_url!(VehicleTypesFileUrl, VehicleTypesFile);

@@ -11,6 +11,8 @@ use crate::v2_3::files::free_bike_status::FreeBikeStatusFile;
 #[cfg(doc)]
 use crate::v2_3::files::gbfs::GbfsFile;
 #[cfg(doc)]
+use crate::v2_3::files::gbfs_versions::GbfsVersionsFile;
+#[cfg(doc)]
 use crate::v2_3::files::station_information::StationInformationFile;
 #[cfg(doc)]
 use crate::v2_3::files::station_status::StationStatusFile;

@@ -69,6 +69,7 @@ macro_rules! file_url {
 
 file_url!(GbfsFileUrl, GbfsFile);
 
+file_url!(GbfsVersionsFileUrl, GbfsVersionsFile);
 file_url!(FreeBikeStatusFileUrl, FreeBikeStatusFile);
 file_url!(StationInformationFileUrl, StationInformationFile);
 file_url!(StationStatusFileUrl, StationStatusFile);

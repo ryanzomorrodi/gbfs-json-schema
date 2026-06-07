@@ -19,6 +19,7 @@ macro_rules! file_struct {
 
 pub mod free_bike_status;
 pub mod gbfs;
+pub mod gbfs_versions;
 pub mod station_information;
 pub mod station_status;
 pub mod system_pricing_plans;
@@ -26,6 +27,7 @@ pub mod vehicle_types;
 
 pub use self::free_bike_status::{FreeBikeStatusData, FreeBikeStatusFile};
 pub use self::gbfs::{GbfsData, GbfsFile};
+pub use self::gbfs_versions::{GbfsVersionsData, GbfsVersionsFile};
 pub use self::station_information::{StationInformationData, StationInformationFile};
 pub use self::station_status::{StationStatusData, StationStatusFile};
 pub use self::system_pricing_plans::{SystemPricingPlansData, SystemPricingPlansFile};
@@ -51,6 +53,13 @@ mod tests {
         let gbfs = include_str!("./examples/specification/gbfs.json");
 
         test_file::<super::gbfs::GbfsFile>(gbfs);
+    }
+
+    #[test]
+    fn gbfs_versions() {
+        let gbfs_versions = include_str!("./examples/specification/gbfs_versions.json");
+
+        test_file::<super::gbfs_versions::GbfsVersionsFile>(gbfs_versions);
     }
 
     #[test]

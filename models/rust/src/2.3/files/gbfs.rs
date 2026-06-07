@@ -116,6 +116,14 @@ macro_rules! add_file_type {
 }
 
 add_file_type!(
+    get_gbfs_versions_url,
+    GbfsVersionsFileUrl,
+    get_gbfs_versions,
+    GbfsVersionsFile,
+    "gbfs_versions"
+);
+
+add_file_type!(
     get_station_information_url,
     StationInformationFileUrl,
     get_station_information,
@@ -154,4 +162,3 @@ add_file_type!(
     VehicleTypesFile,
     "vehicle_types"
 );
-

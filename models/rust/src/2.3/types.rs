@@ -17,6 +17,8 @@ use crate::v2_3::files::station_information::StationInformationFile;
 #[cfg(doc)]
 use crate::v2_3::files::station_status::StationStatusFile;
 #[cfg(doc)]
+use crate::v2_3::files::system_calendar::SystemCalendarFile;
+#[cfg(doc)]
 use crate::v2_3::files::system_hours::SystemHoursFile;
 #[cfg(doc)]
 use crate::v2_3::files::system_information::SystemInformationFile;
@@ -29,6 +31,8 @@ use crate::v2_3::files::vehicle_types::VehicleTypesFile;
 use crate::v2_3::files::free_bike_status::Bike;
 #[cfg(doc)]
 use crate::v2_3::files::station_information::Station;
+#[cfg(doc)]
+use crate::v2_3::files::system_calendar::Calendar;
 #[cfg(doc)]
 use crate::v2_3::files::system_hours::RentalHours;
 #[cfg(doc)]

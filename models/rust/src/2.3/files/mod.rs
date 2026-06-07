@@ -22,6 +22,7 @@ pub mod gbfs;
 pub mod gbfs_versions;
 pub mod station_information;
 pub mod station_status;
+pub mod system_calendar;
 pub mod system_hours;
 pub mod system_information;
 pub mod system_pricing_plans;
@@ -32,6 +33,7 @@ pub use self::gbfs::{GbfsData, GbfsFile};
 pub use self::gbfs_versions::{GbfsVersionsData, GbfsVersionsFile};
 pub use self::station_information::{StationInformationData, StationInformationFile};
 pub use self::station_status::{StationStatusData, StationStatusFile};
+pub use self::system_calendar::{SystemCalendarData, SystemCalendarFile};
 pub use self::system_hours::{SystemHoursData, SystemHoursFile};
 pub use self::system_information::{SystemInformationData, SystemInformationFile};
 pub use self::system_pricing_plans::{SystemPricingPlansData, SystemPricingPlansFile};
@@ -116,6 +118,13 @@ mod tests {
         let system_hours = include_str!("./examples/specification/system_hours.json");
 
         test_file::<super::system_hours::SystemHoursFile>(system_hours);
+    }
+
+    #[test]
+    fn system_calendar() {
+        let system_calendar = include_str!("./examples/specification/system_calendar.json");
+
+        test_file::<super::system_calendar::SystemCalendarFile>(system_calendar);
     }
 
     #[test]

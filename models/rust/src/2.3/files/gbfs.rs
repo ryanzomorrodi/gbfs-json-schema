@@ -164,6 +164,14 @@ add_file_type!(
 );
 
 add_file_type!(
+    get_system_calendar_url,
+    SystemCalendarFileUrl,
+    get_system_calendar,
+    SystemCalendarFile,
+    "system_calendar"
+);
+
+add_file_type!(
     get_free_bike_status_url,
     FreeBikeStatusFileUrl,
     get_free_bike_status,
@@ -178,3 +186,4 @@ add_file_type!(
     VehicleTypesFile,
     "vehicle_types"
 );
+

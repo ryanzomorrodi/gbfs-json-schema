@@ -20,6 +20,8 @@ use crate::v2_3::files::station_status::StationStatusFile;
 use crate::v2_3::files::system_pricing_plans::SystemPricingPlansFile;
 #[cfg(doc)]
 use crate::v2_3::files::vehicle_types::VehicleTypesFile;
+#[cfg(doc)]
+use crate::v3_0::files::system_information::SystemInformationFile;
 
 #[cfg(doc)]
 use crate::v2_3::files::free_bike_status::Bike;
@@ -29,6 +31,8 @@ use crate::v2_3::files::station_information::Station;
 use crate::v2_3::files::system_pricing_plans::SystemPricingPlan;
 #[cfg(doc)]
 use crate::v2_3::files::vehicle_types::VehicleType;
+#[cfg(doc)]
+use crate::v3_0::files::system_information::SystemInformationData;
 
 /// Should be represented as a string that identifies that particular entity. An ID:
 /// - MUST be unique within like fields (for example, `station_id` MUST be unique among stations).
@@ -88,9 +92,6 @@ pub type NonNegativeFloat = f64;
 
 /// An integer greater than or equal to 0.
 pub type NonNegativeInteger = u32;
-
-/// An identifier for a standard license from the [SPDX License List](https://spdx.org/licenses/).
-pub type LicenseID = String;
 
 /// A 6 digit hexadecimal color code in the form #000000.
 pub type Color = String;

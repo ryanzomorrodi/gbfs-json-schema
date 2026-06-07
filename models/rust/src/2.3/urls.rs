@@ -73,5 +73,6 @@ file_url!(GbfsVersionsFileUrl, GbfsVersionsFile);
 file_url!(FreeBikeStatusFileUrl, FreeBikeStatusFile);
 file_url!(StationInformationFileUrl, StationInformationFile);
 file_url!(StationStatusFileUrl, StationStatusFile);
+file_url!(SystemInformationFileUrl, SystemInformationFile);
 file_url!(SystemPricingPlansFileUrl, SystemPricingPlansFile);
 file_url!(VehicleTypesFileUrl, VehicleTypesFile);

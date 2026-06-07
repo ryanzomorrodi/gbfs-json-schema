@@ -140,6 +140,14 @@ add_file_type!(
 );
 
 add_file_type!(
+    get_system_information_url,
+    SystemInformationFileUrl,
+    get_system_information,
+    SystemInformationFile,
+    "system_information"
+);
+
+add_file_type!(
     get_system_pricing_plans_url,
     SystemPricingPlansFileUrl,
     get_system_pricing_plans,
@@ -162,3 +170,4 @@ add_file_type!(
     VehicleTypesFile,
     "vehicle_types"
 );
+

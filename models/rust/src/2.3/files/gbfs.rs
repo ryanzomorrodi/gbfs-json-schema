@@ -156,6 +156,14 @@ add_file_type!(
 );
 
 add_file_type!(
+    get_system_hours_url,
+    SystemHoursFileUrl,
+    get_system_hours,
+    SystemHoursFile,
+    "system_hours"
+);
+
+add_file_type!(
     get_free_bike_status_url,
     FreeBikeStatusFileUrl,
     get_free_bike_status,
@@ -170,4 +178,3 @@ add_file_type!(
     VehicleTypesFile,
     "vehicle_types"
 );
-

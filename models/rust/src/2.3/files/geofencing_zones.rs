@@ -21,8 +21,6 @@ use crate::v2_3::files::station_information;
 #[derive(Serialize, Deserialize, Debug, Clone)]
 pub struct GeofencingZonesData {
     pub geofencing_zones: GeofencingZone,
-    /// restrictions that apply globally in all areas as the default restrictions, except where overridden with an explicit geofencing zone
-    pub global_rules: Option<Vec<Rule>>,
 }
 
 #[cfg_attr(feature = "napi", napi(object))]

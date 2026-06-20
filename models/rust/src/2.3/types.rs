@@ -1,3 +1,5 @@
+use serde::{Deserialize, Deserializer};
+
 #[cfg(doc)]
 use crate::v2_3::files::free_bike_status::FreeBikeStatusFile;
 #[cfg(doc)]
@@ -171,5 +173,27 @@ pub mod geo_json {
     pub struct MultiPolygon {
         pub r#type: String,
         pub coordinates: coordinates::MultiPolygon,
+    }
+}
+
+pub fn deserialize_int_or_bool<'de, D>(deserializer: D) -> Result<bool, D::Error>
+where
+    D: Deserializer<'de>,
+{
+    #[derive(Deserialize)]
+    #[serde(untagged)]
+    enum RawValue {
+        Bool(bool),
+        Int(i64),
+    }
+
+    match RawValue::deserialize(deserializer)? {
+        RawValue::Bool(b) => Ok(b),
+        RawValue::Int(0) => Ok(false),
+        RawValue::Int(1) => Ok(true),
+        RawValue::Int(other) => Err(serde::de::Error::custom(format!(
+            "Invalid integer value for boolean: {}, expected 0 or 1",
+            other
+        ))),
     }
 }

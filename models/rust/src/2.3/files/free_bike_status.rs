@@ -32,8 +32,10 @@ pub struct Bike {
     /// Longitude of the vehicle in decimal degrees.
     pub lon: Option<Longitude>,
     /// Is the vehicle currently reserved?
+    #[serde(default, deserialize_with = "deserialize_int_or_bool")]
     pub is_reserved: bool,
     /// Is the vehicle currently disabled?
+    #[serde(default, deserialize_with = "deserialize_int_or_bool")]
     pub is_disabled: bool,
     /// Rental URIs for Android, iOS, and web
     pub rental_uris: Option<RentalUris>,

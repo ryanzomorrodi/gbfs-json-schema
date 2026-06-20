@@ -43,6 +43,7 @@ pub struct Station {
     ///
     /// In seasonal systems where equipment is removed during winter, boolean SHOULD be set to `false` during the off season.
     /// May also be set to `false` to indicate planned (future) stations which have not yet been installed.
+    #[serde(default, deserialize_with = "deserialize_int_or_bool")]
     pub is_installed: bool,
     /// Is the station currently renting vehicles?
     ///
@@ -50,11 +51,13 @@ pub struct Station {
     ///
     /// If a station becomes inaccessible to users due to road construction or other factors this field SHOULD be set to `false`.
     /// Field SHOULD be set to `false` during hours or days when the system is not offering vehicles for rent.
+    #[serde(default, deserialize_with = "deserialize_int_or_bool")]
     pub is_renting: bool,
     /// Is the station accepting vehicle returns?
     ///
     /// If the station is temporarily taken out of service and not allowing vehicle returns, this field MUST be set to `false`.
     /// If a station becomes inaccessible to users due to road construction or other factors, this field SHOULD be set to `false`.
+    #[serde(default, deserialize_with = "deserialize_int_or_bool")]
     pub is_returning: bool,
     /// The last time this station reported its status to the operator's backend.
     pub last_reported: Option<Timestamp>,

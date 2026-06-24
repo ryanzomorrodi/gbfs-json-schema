@@ -55,7 +55,7 @@ pub struct Feature {
 #[derive(Serialize, Deserialize, Debug, Clone)]
 pub struct Properties {
     /// Public name of the geofencing zone.
-    pub name: String,
+    pub name: Option<String>,
     /// Start time of the geofencing zone. If the geofencing zone is always active, this can be omitted.
     pub start: Option<Timestamp>,
     /// End time of the geofencing zone. If the geofencing zone is always active, this can be omitted.
